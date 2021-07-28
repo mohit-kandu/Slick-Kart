@@ -1,0 +1,31 @@
+.cart_container{
+    width:50vw;
+    background-color: white;
+    margin:0 auto;
+    padding:1em;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-primary);
+    text-align: center;
+}
+.cart_container img{
+width: 300px;
+margin:0 auto;
+}
+.cart_container h2{
+    font-size: 18px;
+    font-weight: 400;
+}
+.cart_container p{
+    font-size: 10px;
+}
+.btn_shop_now{
+    font-size: 14px;
+font-weight: 400;
+padding: 12px 72px;background: #2874f0;
+color: #fff;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+text-decoration: none;
+width: max-content;
+margin:20px auto;
+}

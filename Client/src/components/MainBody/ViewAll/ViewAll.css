@@ -1,0 +1,28 @@
+
+.all_items_container{
+    background-color: white;
+    width: 90vw;
+    margin:1em auto 2em auto;
+
+}
+.all_items_header{
+    text-align: center;
+    border-bottom: 1px solid rgba(200,200,200,0.4);
+    margin:1em auto 3em auto;
+    padding:3em;
+
+}
+.all_items_header p{
+    color:gray;
+
+}
+.all_items{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin:1em auto;
+    place-items: center;
+
+}
+#all_items_name{
+    height: auto;
+}

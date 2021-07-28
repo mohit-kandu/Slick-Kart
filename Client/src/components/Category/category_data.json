@@ -1,0 +1,47 @@
+[
+    {
+        "id": 10000,
+        "name": "Top Offers",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png"
+    },
+    {
+        "id": 10001,
+        "name": "Grocery",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png"
+    },
+    {
+        "id": 10002,
+        "name": "Mobiles",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?"
+    },
+    {
+        "id": 10003,
+        "name": "Fashion",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png"
+    },
+    {
+        "id": 10004,
+        "name": "Electronics",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png"
+    },
+    {
+        "id": 10005,
+        "name": "Home",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg"
+    },
+    {
+        "id": 10006,
+        "name": "Appliances",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png"
+    },
+    {
+        "id": 10007,
+        "name": "Travel",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png"
+    },
+    {
+        "id": 10008,
+        "name": "Beauty, Toys & More",
+        "image": "https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png"
+    }
+]

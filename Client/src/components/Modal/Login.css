@@ -1,0 +1,110 @@
+
+:root{
+    --color-primary:rgb(40,116,240);
+    --color-outline:rgba(129, 79, 79, 0.2);
+}
+
+.login_container{
+    display: flex;
+    height: 550px;
+    width: 700px;
+    border:1px solid var(--color-outline);
+    font-family: 'Roboto', sans-serif;
+
+}
+.login_info, .login_form{
+    padding:1em; 
+}
+.login_info{
+    background-color: var(--color-primary);
+    color:white;
+    display: flex;
+    flex-direction: column;
+    padding:2em;
+    flex: 1;
+
+}
+.login_info img{
+    margin-top:auto;
+}
+.login_form{
+    background-color: white;
+    color:var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    padding:2em;
+    flex: 2;
+
+}
+.login_form input{
+    margin: 1.5em auto;
+    width: 100%;
+    height: 35px;
+    border:none;
+
+}
+.login_form .text_id{
+    border-bottom:1px solid var(--color-outline);
+
+}
+.login_form input:focus{
+    outline:none;
+
+}
+.login_form input:focus::placeholder{
+    transform: translateY(-15px);
+    transition:250ms ease;
+    font-size: 11px;
+}
+.login_form .text_password{
+    width: 75%;
+    margin-right: 1em;
+}
+#password{
+    border-bottom:1px solid var(--color-outline);
+    line-height: .1px;
+    height: 60px;
+
+}
+.forgot_password{
+    font-size: 15px;
+}
+
+.brn_create_account{
+    margin-top:auto;
+    font-weight: 500;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login_form a{
+    text-decoration: none;
+    color:var(--color-primary);
+    font-weight: 500;
+
+}
+.privacy_policy{
+    color:gray;
+    font-size: 12px;
+    margin:2em auto;
+}
+.btn_login{
+    background: #fb641b;
+box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+border: none;
+color: #fff;
+width: 100%;
+padding:1em .25em;
+font-size: 15px;
+
+}
+.btn_otp{
+    border: none;
+line-height: 180%;
+text-align: center;
+background-color: #fff;
+margin-top: 16px;
+font-weight: 400;
+padding:1em .25em;
+box-shadow: 0 4px 6px 0 rgba(0,0,0,.12);
+}
