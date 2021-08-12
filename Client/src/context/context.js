@@ -28,6 +28,9 @@ export default function AppProvider({ children }) {
     const [password, setPassword] = useState('')
     const [authSuccess, setAuthSuccess] = useState(true)
     const [isLoggingIn, setIsLoggingIn] = useState(false)
+    const [addingToCart, setAddingToCart] = useState(false)
+    const [time, setTime] = React.useState(false)
+
 
     const fetchData = async () => {
 
@@ -147,7 +150,9 @@ export default function AppProvider({ children }) {
             decrease,
             toggleAmount,
             isLoading,
+            time,
             products,
+            addingToCart,
             isLoggedIn,
             modalIsOpen,
             isCartEmpty,
@@ -161,7 +166,9 @@ export default function AppProvider({ children }) {
             handleChange,
             setIsLoading,
             setIsLoggingIn,
-            addItem
+            setAddingToCart,
+            addItem,
+            setTime
         }}>{children}</GlobalContext.Provider>
     )
 
