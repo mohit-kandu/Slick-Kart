@@ -9,6 +9,11 @@
     color:white;
     padding:3em 10em;
 }
+@media screen and (max-width:768px) {
+    .footer_container{
+        flex-direction: column;
+    }
+}
 .footer_container a{
     text-decoration: none;
     color:white;
@@ -45,6 +50,7 @@ span.footer_title{
 .footer_last img{
     margin-top:.25em;
     align-self: flex-start;
+    max-width: 100%;
 }
 .footer_last p{
     margin-top:.25em;

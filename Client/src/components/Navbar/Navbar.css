@@ -1,40 +1,63 @@
 .navbar{
     width: 100vw;
     background-color: var(--color-primary);
-    height: 40px;
-    padding: .5em 0 0 0;
     color:white;
     padding:.5em 0;
     z-index: 10;
     transition: 1s smooth;
     font-size: 14px;
-
+    position: fixed;
+    top:0;
+}
+.nav_contents{ /* entire nav bar */
+    display: flex;
+    max-width: 75%;
+    margin:0 auto;
+    z-index: 10;
+    height: 100%;
+}
+@media only screen and (max-width:960px){
+    .nav-contents, .navbar{
+        width: 100vw;
+    }
+    .nav-buttons{
+        width: 100%;
+    }
 }
 
 .arrow_first_half{
     transform: rotate(0deg) rotate(270deg);
 margin: 1px 0 0 8px;
-transition: 500ms;
+transition: 150ms;
+}
+.more:hover .arrow_first_half{
+    transition: 150ms;
+    transform: rotate(90deg);
 }
 
 .dropdown_content{
     position: absolute;
     display: none;
-    right:15%;
     color: rgb(26, 25, 25);
     background-color: white;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,.12);
-    margin:.5em 1em 1em 1em;
     z-index:2;
     border-radius: 5px;
+    margin:5px;
 }
-.dropdown:hover .arrow_first_half{
-    transform: rotate(270deg) rotate(0deg);
-    transition: 500ms;
 
+.login_btn{
+    height: 100%;
+    padding:.2em;
+}
+.login_btn:hover .dropdown_content_login{
+    display: block;
+    right:25%;
 }
 .dropdown:hover .dropdown_content{
     display: block;
+    right:15%;
+
 
 }
 
@@ -63,24 +86,15 @@ transition: 500ms;
 
 }
 
+.logo{
+    height: 100%;
+}
 .logo img{
     max-width: 100px;
-    padding-top:.5em;
+    margin-top:.75rem;
 }
 
-.nav-contents{ /* entire nav bar */
-    display: flex;
-    width: 75%;
-    margin:0 auto;
-}
-@media only screen and (max-width:960px){
-    .nav-contents, .navbar{
-        width: 100vw;
-    }
-    .nav-buttons{
-        width: 100%;
-    }
-}
+
 .nav-buttons{
     display: flex;
     justify-content: space-evenly;
@@ -95,8 +109,12 @@ transition: 500ms;
     color:black;
     width: 100%;
     display: flex;
+    padding:.2rem 0;
     
 
+}
+.dropdown_content .dropdown_content_login svg{
+margin-right: 1rem;
 }
 .more span, .shopping-cart span{
     font-size: 14px;
@@ -110,6 +128,9 @@ transition: 500ms;
     font-size:12px;
     padding:.5em;
 
+}
+.search input::placeholder{
+    font-weight: 500;
 }
 .search input:focus{
     outline:none;
@@ -128,23 +149,51 @@ transition: 500ms;
 }
 
 .nav-buttons{
-    margin-left: 15em;
+    margin-left: 15rem;
     display: flex;
     cursor: pointer;
     justify-content: space-between;
 
 }
+@media only screen and (max-width:960px) {
+    .nav-buttons{
+        margin-left: 2rem;
+    }
+}
+@media only screen and (max-width:768px) {
+    .nav-buttons{
+        display: none;
+    }
+    
+}
 .login, .more, .shopping-cart{
     padding:.5em;
     margin-top:.25em;
     font-family: 'Roboto', sans-serif;
-    color: white;
 
+    color: white;
 }
 #cart{
     text-decoration: none;
 
+
 }
+.shopping-cart{
+    position: relative;
+}
+.cart_total{
+
+    position: absolute;
+    left: 20%;
+    bottom:60%;
+    background-color: #ff6161;
+    color:#f0f0f0;
+    font-weight: 400;
+    border-radius: 25%;
+    border:1px solid #f0f0f0;;
+    padding:.05rem;
+}
+
 .login{
     color:var(--color-primary);
     background-color: white;

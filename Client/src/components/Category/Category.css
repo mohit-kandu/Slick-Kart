@@ -3,13 +3,13 @@
     box-shadow: 0px 0.5px rgb(185, 179, 179);
     width: 100vw;
     background-color: white;
-
+    margin-top:3.5rem;
 }
 
 .category{
     list-style: none;
     display: flex;
-    margin:1em auto;
+    margin:1rem auto;
     max-width: 60%;
     justify-content: space-between;
     font-size: 10px;
@@ -17,7 +17,7 @@
 
 }
 .category img{
-    height: 64px;
+    max-width: 64px;
 }
 .category li{
     cursor: pointer;
@@ -27,4 +27,24 @@
 }
 .category li:hover{
     color: var(--color-primary);
+}
+
+@media only screen and (max-width:768px){
+    .category{
+        width: 100%;
+        font-size: 8px;
+        flex-wrap: wrap;
+    }
+    .category img{
+        max-width: 32px;
+    }
+}
+
+@media only screen and (max-width:1366px){
+    .category{
+        max-width: 80%;
+    }
+    .category img{
+        max-width: 48px;
+    }
 }

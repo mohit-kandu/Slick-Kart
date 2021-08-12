@@ -1,8 +1,11 @@
 import React from 'react'
 import "./Content.css"
-import { useGlobalContext } from "../../../context/context"
+import { useGlobalContext } from "../../../Context/Context"
 import Loading from "../../Loading/Loading"
 import { Link } from "react-router-dom"
+import Item from "../../Item/Item"
+
+
 
 
 export default function Content({ title }) {
@@ -20,12 +23,10 @@ export default function Content({ title }) {
                     <Link to="/viewall" style={{ textDecoration: "none" }}><div>VIEW ALL</div></Link>
                 </div>
                 <div className="content_suggested_items">
-                    {products.map(product => <div className="content_suggested_item" key={product.id}>
-                        <img src={product.image} alt="product_thumbnail" />
-                        <h4 id="content_suggested_name">{product.title}</h4>
-                        <span>${product.price}</span>
-                        {/* <p class="suggested_description">{product.description}</p> */}
-                    </div>)}
+                    {products.map(product => {
+                        return <Item product={product} key={product.id} />
+                    })
+                    }
                 </div>
                 <div className="next" onClick={e => handleChange(e, document.querySelector('.content_suggested_items'))}>
                     <img src="https://uxwing.com/wp-content/themes/uxwing/download/02-arrow-direction/angle-right.svg" alt="nav_btn" />

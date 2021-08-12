@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Suggested.css"
-import { useGlobalContext } from "../../../context/context"
+import { useGlobalContext } from "../../../Context/Context"
 import Loading from "../../Loading/Loading"
 import { Link } from "react-router-dom"
 
@@ -19,12 +19,17 @@ export default function Suggested() {
                     <Link to="/viewall" style={{ textDecoration: "none" }}><div>VIEW ALL</div></Link>
                 </div>
                 <div className="suggested_items">
-                    {products.map(product => <div className="suggested_item" key={product.id}>
-                        <img src={product.image} alt="product_thumbnail" />
-                        <h4 id="suggested_name">{product.title}</h4>
-                        <span>${product.price}</span>
-                        {/* <p class="suggested_description">{product.description}</p> */}
-                    </div>)}
+                    {products.map(product =>
+                        <Link to={{ pathname: `/singleItem/${product.id}` }} style={{ textDecoration: "none", color: "black" }} key={product.id}>
+                            <div className="suggested_item" >
+                                <img src={product.image} alt="product_thumbnail" />
+                                <h4 id="suggested_name">{product.title}</h4>
+                                <span>${product.price}</span>
+                                {/* <p class="suggested_description">{product.description}</p> */}
+                            </div>
+                        </Link>
+                    )
+                    }
                 </div>
                 <div className="next" onClick={e => handleChange(e, document.querySelector(".suggested_items"))}>
                     <img src="https://uxwing.com/wp-content/themes/uxwing/download/02-arrow-direction/angle-right.svg" alt="nav_btn" />

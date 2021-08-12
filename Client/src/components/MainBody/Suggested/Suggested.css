@@ -45,7 +45,7 @@
 
 }
 .suggested_item img{
-    width: 200px;
+    width: 160px;
     aspect-ratio: 1/1;
 }
 .suggested_item{
@@ -72,7 +72,7 @@
 /* Prev button */
 .prev{
     position: absolute;
-    z-index: 100;
+    z-index: 9;
     width: 1em;
     height: 1em;
     border:1em solid white;
@@ -95,9 +95,10 @@
 /* Next button */
 .next{
     position: absolute;
-    z-index: 100;
+    z-index: 9;
     width: 1em;
     height: 1em;
+    background-color: white;
     border:1em solid white;
     border-radius: 10% 0% 0% 10%;
     bottom:5em;

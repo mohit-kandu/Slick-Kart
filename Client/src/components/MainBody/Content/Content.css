@@ -40,14 +40,15 @@
 
 }
 .content_suggested_item img{
-    width: 200px;
+    width: 160px;
     aspect-ratio: 1/1;
 
 }
 .content_suggested_item{
-    width: 175px;
+    max-width: 175px;
     text-align: center;
     padding:1em 1.5em;
+    cursor:pointer;
 }
 .content_suggested_item h4{
     font-weight: 400;

@@ -1,5 +1,6 @@
 :root{
     --color-primary:rgb(40,116,240);
+    --color-light-gray:#878787;
     --font-primary:'Roboto', sans-serif;
 }
 body{

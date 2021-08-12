@@ -6,12 +6,13 @@
 
 .login_container{
     display: flex;
-    height: 550px;
-    width: 700px;
+    max-height: 550px;
+    max-width: 700px;
     border:1px solid var(--color-outline);
     font-family: 'Roboto', sans-serif;
 
 }
+
 .login_info, .login_form{
     padding:1em; 
 }
@@ -95,7 +96,11 @@ border: none;
 color: #fff;
 width: 100%;
 padding:1em .25em;
+text-align: center;
 font-size: 15px;
+margin:1em auto;
+margin-left: 300px;
+cursor: pointer;
 
 }
 .btn_otp{
@@ -106,5 +111,7 @@ background-color: #fff;
 margin-top: 16px;
 font-weight: 400;
 padding:1em .25em;
+margin:2rem 0 3rem 0;
 box-shadow: 0 4px 6px 0 rgba(0,0,0,.12);
+cursor: pointer;
 }
