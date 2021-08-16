@@ -1,3 +1,7 @@
+.footer{
+    width: 100vw;
+}
+
 #footer_container{
     margin-top:.5em;
 }
@@ -7,13 +11,19 @@
     font-size: 12px;
     background-color: rgb(23,35,55);
     color:white;
-    padding:3em 10em;
+    padding:3rem 10rem;
 }
 @media screen and (max-width:768px) {
     .footer_container{
         flex-direction: column;
     }
 }
+/* .footer_container:first-child{
+padding-left: 5rem;
+}
+#footer_container.footer_container:first-child{
+padding-left: 5rem;
+} */
 .footer_container a{
     text-decoration: none;
     color:white;
@@ -26,6 +36,7 @@
 }
 .footer_title{
     margin:1em auto;
+
     text-transform: uppercase;
     color:#878787;
 }

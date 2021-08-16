@@ -4,7 +4,7 @@ import "./Footer.css"
 
 export default function Footer() {
     return (
-        <>
+        <div className="footer">
             <div id="footer_container" className="footer_container">
                 <div>
                     <div className="footer_title">About</div>
@@ -19,7 +19,7 @@ export default function Footer() {
                     <div className="footer_title">Help</div>
                     <a href="#">payments</a>
                     <a href="#">shipping</a>
-                    <a href="#">Cancellations &amp returns</a>
+                    <a href="#">Cancellations &amp; returns</a>
                     <a href="#">FAQ</a>
                     <a href="#">report infringement</a>
                 </div>
@@ -41,7 +41,7 @@ export default function Footer() {
                 <div id="footer_title_border">
                     <span className="footer_title">Mail us:</span>
                     <p>Flipkart Internet Private Limited, </p>
-                    <p>Buildings Alyssa, Begonia &amp </p>
+                    <p>Buildings Alyssa, Begonia &amp; </p>
                     <p>Clove Embassy Tech Village,</p>
                     <p>Outer Ring Road, Devarabeesanahalli Village, </p>
                     <p>Bengaluru, 560103, </p>
@@ -50,7 +50,7 @@ export default function Footer() {
                 <div id="footer_title_nonborder">
                     <span className="footer_title">Registered Office Address:</span>
                     <p>Flipkart Internet Private Limited,  </p>
-                    <p>Buildings Alyssa, Begonia &amp </p>
+                    <p>Buildings Alyssa, Begonia &amp; </p>
                     <p>Clove Embassy Tech Village,</p>
                     <p>Outer Ring Road, Devarabeesanahalli Village, </p>
                     <p>Bengaluru, 560103, </p>
@@ -85,6 +85,6 @@ export default function Footer() {
                     <img src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/payment-method_69e7ec.svg" alt="" />
                 </div>
             </div>
-        </>
+        </div>
     )
 }

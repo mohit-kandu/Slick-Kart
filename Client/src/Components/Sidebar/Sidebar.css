@@ -1,0 +1,109 @@
+@media only screen and (max-width:991px) {
+    /* .body{
+        overflow-x: hidden;
+    } */
+  .nav-buttons{
+      transform: translateX(100%);
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      top:3.3rem;
+      padding:1px 0;
+      height: fit-content;
+      justify-content: space-between;
+      width: auto;
+      align-items: center;
+  
+  }
+  .nav_menu_button{
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-left: auto;
+      transition: all .5s;
+  }
+  .MdMenu{
+      height: 32px;
+      width: 32px;
+  
+  }
+  .nav_menu_list{
+      color:black;
+      font-weight:400;
+      font-size: .7rem;
+      background-color: white;
+      border:1px solid red;
+          /* position: relative; */
+  }
+  .navbar_close{
+      transform: translateX(100%);
+      animation: nav_slide_out 500ms;
+  }
+  @keyframes nav_slide_out{
+      from{
+          transform: translateX(0);
+      }
+      to{
+          transform: translateX(100%);
+      }
+  }
+  
+  .navbar_open{
+      transform: translateX(0%);
+      animation: nav_slide_in 500ms;
+  }
+  @keyframes nav_slide_in{
+      from{
+          transform: translateX(100%);
+      }
+      to{
+          transform: translateX(0%);
+      }
+  }
+  
+  #mycart{
+      color:rgb(85, 81, 81);
+      font-size: .7rem;
+      margin-left: 1rem;
+  
+  }
+  #react_icon{
+      color:#fff;
+      width: 15px;
+      height: 15px;
+      margin-right: .5rem;
+  }
+  .nav_menu_list li:first-child{
+      background-color: var(--color-primary);
+  }
+  .nav_menu_list ul{
+      margin:0;
+      padding:0;
+      height: calc(100vh - 3rem);
+      color:rgb(85, 81, 81);
+  }
+  .nav_menu_list li{
+      list-style: none;
+      padding:.75rem 10rem .75rem 1rem;
+      border-bottom:1px solid var(--color-underline);
+      display: flex;
+      align-items: center;
+  }
+  .nav_menu_list li:hover{
+  background-color:rgba(119, 113, 113, 0.123);
+  
+  }
+  .nav_menu_list li:first-child:hover{
+  background-color:#2875f0e1;
+  
+  }
+  
+  .nav_menu_icons{
+      width: 24px;
+      height: 21px;
+      margin-right: .75rem;
+  }
+  
+  }

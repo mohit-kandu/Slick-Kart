@@ -3,7 +3,7 @@
     width: 90vw;
     margin:1em auto;
     background-color: white;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .content_suggested_title{
@@ -12,12 +12,10 @@
     padding:1em;
     border-right: 2px solid white;
     z-index: 20;
-
 }
 .content_suggested_title h2{
     flex-grow: 2;
     font-weight: 400;
-
 }
 .content_suggested_title div{
     background-color: var(--color-primary);
@@ -33,7 +31,7 @@
 .content_suggested_items{
     padding:1em .75em;
     display: flex;
-    margin-right:2em;
+    /* margin-right:2em; */
     z-index: -2;
     overflow-x: hidden;
 
@@ -62,6 +60,5 @@
     position: relative;
     width: 100%;
     border-right: 1px rgba(185, 179, 179,.5) solid;
-
 }
 

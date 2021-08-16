@@ -3,13 +3,12 @@
     box-shadow: 0px 0.5px rgb(185, 179, 179);
     width: 100vw;
     background-color: white;
-    margin-top:3.5rem;
 }
 
 .category{
     list-style: none;
     display: flex;
-    margin:1rem auto;
+    margin:.25rem auto;
     max-width: 60%;
     justify-content: space-between;
     font-size: 10px;

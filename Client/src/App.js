@@ -8,10 +8,9 @@ import Footer from './Components/Footer/Footer'
 import ViewAll from './Components/MainBody/ViewAll/ViewAll';
 
 // import FAQ from './components/FAQ/FAQ'
-import Testing from './Testing/Testing';
+// import Testing from './Testing/Testing';
 import Login from './Components/Modal/Login';
 import CartContainer from './Components/Cart/CartContainer';
-import Item from './Components/Item/Item'
 import SingleItem from './Components/SingleItem/SingleItem';
 
 export default function App() {

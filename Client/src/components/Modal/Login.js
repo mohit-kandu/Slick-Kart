@@ -24,7 +24,7 @@ const customStyles = {
 Modal.setAppElement(document.getElementById('root'));
 
 export default function Login() {
-    const { setIsOpen, modalIsOpen, handleLogin, handleSubmit, authSuccess, isLoggingIn } = useGlobalContext()
+    const { setIsOpen, modalIsOpen, handleLogin, authSuccess, isLoggingIn } = useGlobalContext()
     const { loginWithRedirect } = useAuth0()
 
     // function openModal() {

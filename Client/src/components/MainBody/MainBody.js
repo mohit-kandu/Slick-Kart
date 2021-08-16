@@ -7,7 +7,7 @@ import Suggested from './Suggested/Suggested'
 
 export default function MainBody() {
     return (
-        <>
+        <div className="main_body_container">
             <AdCarousel />
             <Suggested />
             <Offers />
@@ -15,6 +15,6 @@ export default function MainBody() {
             {/* <Content1 title="Home Makeover" />
             <Content1 title="Men's Footwear" />
             <Content1 title="Furniture Bestsellers" /> */}
-        </>
+        </div>
     )
 }

@@ -50,17 +50,17 @@ export default function AppProvider({ children }) {
     }, [])
 
 
-    // CONTROL LEFT OR RIGHT BUTTONS FOR ON CONTENT
+    // CONTROL LEFT OR RIGHT BUTTONS FOR CONTENT
     const handleChange = (e, itemToDisplace) => {
         if (e.target.className === "prev")
             itemToDisplace.scrollBy({
-                left: -250,
+                left: -500,
                 behavior: 'smooth'
             });
 
         if (e.target.className === "next")
             itemToDisplace.scrollBy({
-                left: 250,
+                left: 500,
                 behavior: 'smooth'
             });
     }
@@ -105,33 +105,16 @@ export default function AppProvider({ children }) {
     const decrease = (id) => {
         dispatch({ type: 'DECREASE', payload: id })
     }
-    // const fetchCartData = async () => {
-    //     dispatch({ type: 'LOADING' })
-    //     let newCart = []
-    //     const response = await fetch('https://fakestoreapi.com/products?limit=3')
-    //     const cart = await response.json()
-    //     await cart.map(item => {
-    //         let temp = { ...item, amount: 1 }
-    //         newCart = [...newCart, temp]
-    //     }
-    //     )
-    //     dispatch({ type: 'DISPLAY_ITEMS', payload: newCart })
-    // }
+
     const fetchCartData = async () => {
         dispatch({ type: 'LOADING' })
         let newCart = state.cart
-        // const response = await fetch('https://fakestoreapi.com/products?limit=3')
-        // const cart = await response.json()
-        // await cart.map(item => {
-        //     let temp = { ...item, amount: 1 }
-        //     newCart = [...newCart, temp]
-        // }
-        // )
         dispatch({ type: 'DISPLAY_ITEMS', payload: newCart })
     }
     const toggleAmount = (id, type) => {
         dispatch({ type: 'TOGGLE_AMOUNT', payload: { id, type } })
     }
+
     useEffect(() => {
         fetchCartData()
     }, [])
@@ -168,7 +151,9 @@ export default function AppProvider({ children }) {
             setIsLoggingIn,
             setAddingToCart,
             addItem,
-            setTime
+            setTime,
+            setIsCartEmpty,
+            setIsLoggedIn
         }}>{children}</GlobalContext.Provider>
     )
 

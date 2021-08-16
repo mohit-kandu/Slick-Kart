@@ -3,6 +3,7 @@
     width: 90vw;
     margin:1em auto;
     background-color: white;
+    overflow-x: hidden;
     height: 500px;
 }
 
