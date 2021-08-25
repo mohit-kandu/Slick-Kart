@@ -1,0 +1,24 @@
+.offers_container{
+    display: flex;
+    width: 80vw;
+    margin:1em auto;
+    justify-content: space-around;
+}
+.offers_container img{
+width: 33%;
+    height: 20em;
+    cursor: pointer;
+    border:1px solid rgba(224, 220, 220.5);
+    padding:1em;
+}
+@media screen and (max-width:800px) {
+    .offers_container{
+        flex-direction: column;
+        margin:1em auto;
+
+    }
+    .offers_container img{
+        width: 90%;
+        margin:1em auto;
+    }
+}

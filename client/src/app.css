@@ -1,0 +1,41 @@
+:root{
+    --color-primary:rgb(40,116,240);
+    --color-light-gray:#878787;
+    --color-underline:#d6d0d0b9;
+    --font-primary:'Roboto', sans-serif;
+}
+html{
+    width:100vw;
+    overflow-x: hidden;
+
+}
+/*  */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: #888;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  /*  */
+body{
+box-sizing: border-box;
+scroll-behavior: smooth;
+    margin:0;
+padding:0 ;
+background-color: #f3f3f3;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}

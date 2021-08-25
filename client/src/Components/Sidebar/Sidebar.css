@@ -1,0 +1,106 @@
+@media only screen and (max-width:991px) {
+    .sidebar_btn{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        /* justify-content: flex-end; */
+        margin-left: auto;
+        transition: .5s;
+        position: relative;;
+        z-index: 1000; 
+        /* margin-right: 4rem; */
+    }
+    .sidebar_container{
+    }
+  .sidebar{
+      color:black;
+      font-weight:400;
+      font-size: .7rem;
+      background-color: white;
+      position: absolute;
+      top:3.3rem;
+      right:0;
+      z-index: -2;
+      /* transform: translateX(100%); */
+      height: fit-content;
+      /* border:1px solid rgba(161, 162, 163, 0.534); */
+      display: hidden;
+      opacity: 0;
+  }
+
+  .sidebar_close{
+      /* transform: translateX(100%); */
+      transition: 500ms;
+      opacity: 0;
+      pointer-events: none;
+  }
+
+  .sidebar_open{
+      /* transform: translateX(0%); */
+      transition: 500ms;
+      opacity: 1;
+      pointer-events: all;
+
+  }
+
+  .sidebar li:first-child{
+      background-color: var(--color-primary);
+  }
+  .sidebar ul{
+      margin:0;
+      padding:0;
+      color:rgb(85, 81, 81);
+  }
+  .sidebar li{
+      list-style: none;
+      padding:.75rem 10rem .75rem 1rem;
+      border-bottom:1px solid var(--color-underline);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+  }
+  .sidebar li:hover{
+  background-color:rgba(119, 113, 113, 0.123);
+  
+  }
+  .sidebar li:first-child:hover{
+  background-color:#2875f0e1;
+  
+  }
+  
+  .nav_menu_icons{
+      width: 24px;
+      height: 21px;
+      margin-right: .75rem;
+  }
+  
+  .MdMenu{
+    height: 32px;
+    width: 32px;
+}
+
+#mycart{
+    color:rgb(85, 81, 81);
+    font-size: .7rem;
+    margin-left: 1rem;
+
+}
+#react_icon{
+    color:#fff;
+    width: 15px;
+    height: 15px;
+    margin-right: .5rem;
+}
+  
+  }
+@media only screen and (max-width:480px) {
+    .sidebar{
+        top:0.5rem;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 20;
+        
+    }
+}
+  
