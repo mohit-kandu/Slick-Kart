@@ -45,6 +45,11 @@ export default function Login() {
         history.push(`/order`)
         // setOrderPlaced(true)
     }
+
+    function redirect() {
+        window.location.href = "/order";
+    }
+
     return (
         <div>
             <Modal
@@ -59,7 +64,12 @@ export default function Login() {
                         :
                         <div className="order_wrapper">
                             <h2>Please enter your order details here:</h2>
-                            <form method="post" encType="application/x-www-form-urlencoded" action={`${url}/order`} >
+                            <form
+                                method="post"
+                                encType="application/x-www-form-urlencoded"
+                            // action={`${url}/order`}
+                            // onSubmit={() => redirect()}
+                            >
                                 <div className="customer_name" >
                                     <input type="text" name="firstName" placeholder="Your first name" />
                                     <input type="text" name="lastName" placeholder="Your last name" />
@@ -68,7 +78,7 @@ export default function Login() {
                                 <input type="text" name="email" placeholder="Your e-mail" />
                                 <input type="text" name="address1" placeholder="Your address" />
                                 <input type="text" name="address2" placeholder="Your address" />
-                                <button type="submit" onClick={(e) => handleSubmit(e)}>Place Order</button>
+                                <button onClick={(e) => redirect(e)}>Place Order</button>
                             </form>
                         </div>
                 }

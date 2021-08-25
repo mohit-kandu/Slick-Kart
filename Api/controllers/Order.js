@@ -5,9 +5,9 @@ const Order = asyncWrapper(async (req, res) => {
     //validation for first and last name
     const nameValidator = /^[a-zA-Z]+$/
     // const contactValidator = /^[0-9]/
+    // req.body.contact = Number(req.body.contact)
 
-    req.body.contact = Number(req.body.contact)
-    console.log(typeof (req.body.contact))
+    // console.log(req.body)
 
 
 
