@@ -20,8 +20,8 @@ const CartContainer = () => {
                     <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?" alt="" />
 
                 </div>
-                <h2 style={{ textAlign: "center" }}>Your cart is empty!</h2>
-                <p>Add items to it now.</p>
+                <h2 style={{ textAlign: "center", fontSize: "1rem" }}>Your cart is empty!</h2>
+                <p style={{ fontSize: ".9rem" }}>Add items to it now.</p>
                 <Link to="/" style={{ textDecoration: 'none', color: "white" }}>
                     <div className="btn_shop_now">
                         <p className="">Shop now</p>

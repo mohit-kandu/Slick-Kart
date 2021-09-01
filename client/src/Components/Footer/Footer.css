@@ -92,8 +92,8 @@ span.footer_title{
     .footer_container{
         font-size:.8rem ;
     }
-    #footer_container.footer_container{
-width: 100vw;
+    #footer_container.footer_container, #footer_container_last{
+width: 80%;
     }
 
 }

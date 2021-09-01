@@ -6,7 +6,7 @@ import { MdMenu } from 'react-icons/md';
 import Sidebar from "../Sidebar/Sidebar"
 
 export default function Navbar() {
-    const { enterPressed, setEnterPressed, setIsOpen, amount } = useGlobalContext()
+    const { enterPressed, setEnterPressed, amount } = useGlobalContext()
     const [bodyWidth, setBodyWidth] = useState(document.body.scrollWidth)
     const [navBtnClicked, setNavBtnClicked] = useState(true)
     const [search, setSearch] = useState('')

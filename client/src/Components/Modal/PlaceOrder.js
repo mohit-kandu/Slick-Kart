@@ -28,8 +28,6 @@ Modal.setAppElement(document.getElementById('root'));
 export default function Login() {
     const { url, setModalIsOpen, modalIsOpen, } = useGlobalContext()
     const [orderPlaced, setOrderPlaced] = useState(false)
-    const { loginWithRedirect } = useAuth0()
-    let history = useHistory()
 
 
     // function openModal() {
@@ -40,15 +38,15 @@ export default function Login() {
     }
 
     const handleSubmit = (e) => {
-        // e.preventDefault()
-        console.log("submittd")
-        history.push(`/order`)
-        // setOrderPlaced(true)
+        const handleForm = (e) => {
+            e.preventDefault()
+        }
+
+        var form = document.getElementById("order_form")
+        form.addEventListener('submit', handleForm);
+        form.removeEventListener('submit', handleForm);
     }
 
-    function redirect() {
-        window.location.href = "/order";
-    }
 
     return (
         <div>
@@ -64,11 +62,10 @@ export default function Login() {
                         :
                         <div className="order_wrapper">
                             <h2>Please enter your order details here:</h2>
-                            <form
+                            <form id="order_form"
                                 method="post"
                                 encType="application/x-www-form-urlencoded"
-                            // action={`${url}/order`}
-                            // onSubmit={() => redirect()}
+                                action={`${url}/order`}
                             >
                                 <div className="customer_name" >
                                     <input type="text" name="firstName" placeholder="Your first name" />
@@ -78,7 +75,7 @@ export default function Login() {
                                 <input type="text" name="email" placeholder="Your e-mail" />
                                 <input type="text" name="address1" placeholder="Your address" />
                                 <input type="text" name="address2" placeholder="Your address" />
-                                <button onClick={(e) => redirect(e)}>Place Order</button>
+                                <button onClick={(e) => handleSubmit(e)} >Place Order</button>
                             </form>
                         </div>
                 }

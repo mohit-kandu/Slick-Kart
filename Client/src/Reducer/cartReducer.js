@@ -1,4 +1,4 @@
-const reducer = (state, action) => {
+const cartReducer = (state, action) => {
 
   if (action.type === 'ADD_ITEM') {
     let tempCart
@@ -47,7 +47,8 @@ const reducer = (state, action) => {
       }
     )
     total = parseFloat(total.toFixed(2))
-
+    // if (localStorage === "undefined" || localStorage === "0") {
+    // }
     return { ...state, total, amount }
   }
   if (action.type === 'LOADING') {
@@ -76,4 +77,4 @@ const reducer = (state, action) => {
 }
 
 
-export default reducer
+export default cartReducer

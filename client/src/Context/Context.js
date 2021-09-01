@@ -1,6 +1,6 @@
 import React, { useContext, useState, useReducer, useEffect } from 'react'
 import axios from "axios"
-import reducer from "../Reducer/reducer"
+import cartReducer from "../Reducer/cartReducer"
 
 
 // CART SETUP
@@ -19,7 +19,7 @@ const GlobalContext = React.createContext()
 export default function AppProvider({ children }) {
     const [enterPressed, setEnterPressed] = useState(false)
 
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(cartReducer, initialState)
     const [url, setUrl] = useState('/api/v1')
     const [productsClothing, setProductsClothing] = useState([])
     const [productsFootwear, setProductsFootwear] = useState([])

@@ -36,13 +36,16 @@ margin:0 auto;
     font-size: 10px;
 }
 .btn_shop_now, .btn_login{
-    font-size: 14px;
-font-weight: 400;
-padding: 12px 72px;
-color: #fff;
-box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-width: max-content;
-margin:20px auto;
+    font-weight: 400;
+    padding: 12px 72px;
+    color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    width: max-content;
+    margin:20px auto;
+    font-size: 2rem;
+}
+.btn_shop_now p{
+    font-size: .9rem;
 }
 .btn_shop_now{
 background: var(--color-primary);

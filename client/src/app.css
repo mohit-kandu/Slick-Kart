@@ -14,6 +14,8 @@ html{
     width: 10px;
   }
   
+
+  /* Custom Scrollbar */
   /* Track */
   ::-webkit-scrollbar-track {
       background: #888;
@@ -29,6 +31,8 @@ html{
     background: #555;
   }
   /*  */
+
+
 body{
 box-sizing: border-box;
 scroll-behavior: smooth;
@@ -39,3 +43,6 @@ background-color: #f3f3f3;
 *{
     font-family: 'Roboto', sans-serif;
 }
+
+
+/* css for stripe payment */
