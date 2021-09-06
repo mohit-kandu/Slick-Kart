@@ -22,7 +22,9 @@
     margin:1em auto;
     width: 100%;
     place-items: center;
-
+}
+.content_suggested_item:hover.content_suggested_item h4, .content_suggested_item:hover.content_suggested_item span{
+    color:var(--color-primary);
 }
 #all_items_name{
     height: auto;

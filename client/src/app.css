@@ -1,11 +1,12 @@
 :root{
     --color-primary:rgb(40,116,240);
+    /* --color-shopify:#004c3f; */
     --color-light-gray:#878787;
     --color-underline:#d6d0d0b9;
     --font-primary:'Roboto', sans-serif;
 }
 html{
-    width:100vw;
+    width:100%;
     overflow-x: hidden;
 
 }

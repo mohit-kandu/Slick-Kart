@@ -10,7 +10,6 @@ const CartContainer = () => {
 
     const handleClick = () => {
         setModalIsOpen(true)
-        console.log(modalIsOpen)
     }
 
     if (cart.length === 0) /* if cart empty */

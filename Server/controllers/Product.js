@@ -13,15 +13,16 @@ const getAllProducts = asyncWrapper(async (req, res) => {
     if (title) {
         queryObject.title = { $regex: title, $options: 'i' }
     }
-    let result = await Product.find(queryObject)
+    let result = Product.find(queryObject)
 
     if (sort) {
-        console.log(result)
-        result = result.sort({ price: 1 })
+        if (sort === 'low')
+            result = result.sort({ price: 1 })
+        else
+            result = result.sort({ price: -1 })
     }
 
     const product = await result
-
     return res.status(201).json({ success: true, NoOfItems: product.length, data: product })
 }
 )

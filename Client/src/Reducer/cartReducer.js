@@ -3,6 +3,7 @@ const cartReducer = (state, action) => {
   if (action.type === 'ADD_ITEM') {
     let tempCart
     let itemAlreadyExists = false
+    let tempIDs = []
 
     if (state.cart !== []) {
       tempCart = state.cart.map((cartItem) => {
@@ -17,8 +18,9 @@ const cartReducer = (state, action) => {
     if (!itemAlreadyExists) {
       itemAlreadyExists = false
       tempCart = [...state.cart, action.payload]
+      tempIDs.push(...state.itemIDs, action.payload._id)
     }
-    return { ...state, cart: tempCart }
+    return { ...state, cart: tempCart, itemIDs: tempIDs }
   }
 
 

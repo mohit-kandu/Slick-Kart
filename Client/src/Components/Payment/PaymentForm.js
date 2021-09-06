@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
+import { useGlobalContext } from '../../Context/Context'
+import Loading from "../Loading/LoadingSmall"
 
 const CARD_OPTIONS = {
     iconStyle: "solid",
@@ -25,10 +27,20 @@ const CARD_OPTIONS = {
 
 export default function PaymentForm() {
     const [success, setSuccess] = useState(false)
+    const [customerInfo, setCustomerInfo] = useState({})
+    const { isLoading, setIsLoading } = useGlobalContext()
+    const { url } = useGlobalContext()
     const elements = useElements()
     const stripe = useStripe()
     let history = useHistory()
-    // const cartTotal = localStorage.getItem('cartTotal')
+
+    // get the details of the latest customer while they fill their payment details
+    useEffect(() => {
+        const fetchCustomerInfo = async () => {
+            await axios.get(`${url}/order/last_order`).then(customer => setCustomerInfo(customer.data))
+        }
+        fetchCustomerInfo()
+    }, [url])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -36,11 +48,9 @@ export default function PaymentForm() {
             type: "card",
             card: elements.getElement(CardElement)
         })
-
         if (!error) {
             try {
-                localStorage.setItem("ching", "chong")
-                console.log(localStorage)
+                setIsLoading(true)
                 const { id } = paymentMethod
                 const response = await axios.post(`/api/v1/payment`, {
                     // amount: Number(cartTotal),
@@ -48,14 +58,18 @@ export default function PaymentForm() {
                     id
                 })
                 if (response.data.success) {
+                    setIsLoading(false)
                     console.log("Successful payment")
+                    console.log(isLoading)
                     setSuccess(true)
                 }
 
             } catch (error) {
+                setIsLoading(false)
                 console.log("Error", error)
             }
         } else {
+            setIsLoading(false)
             console.log(error.message)
         }
     }
@@ -63,10 +77,9 @@ export default function PaymentForm() {
     const handleClick = () => {
         history.push('/')
     }
-
     return (
         <>
-            {!success ?
+            {!success && !isLoading ?
                 <>
                     <h2>Enter your payment details to complete the order:</h2>
                     <form onSubmit={handleSubmit}>
@@ -79,11 +92,18 @@ export default function PaymentForm() {
                     </form>
                 </>
                 :
-                <div>
-                    <h2>Your order is on your way. Your order ID is ching.</h2>
-                    <button onClick={() => handleClick()} className="login">Shop More</button>
+                isLoading ?
+                    <>
+                        <h2>Transaction in progress </h2>
+                        <Loading />
+                    </>
+                    :
 
-                </div>
+                    <div>
+                        <h2>Your order is on your way. Your order ID is {customerInfo[0]._id}.</h2>
+                        <button onClick={() => handleClick()} className="login">Shop More</button>
+                    </div>
+
             }
 
         </>

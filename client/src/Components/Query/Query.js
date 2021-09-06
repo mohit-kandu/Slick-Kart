@@ -11,12 +11,15 @@ export default function Query() {
     const { query } = useParams()
     const queryValue = query.split('=')[1]
 
-    useEffect(() => {
-        async function fetchData() {
-            setIsLoading(true)
+    async function fetchData(sortBy = 'none') {
+        setIsLoading(true)
+        if (sortBy === 'none')
             await axios.get(`${url}/products?title=${queryValue}`).then(resp => setQueryResult(resp.data.data))
-            setIsLoading(false)
-        }
+        else
+            await axios.get(`${url}/products?title=${queryValue}&sort=${sortBy}`).then(resp => setQueryResult(resp.data.data))
+        setIsLoading(false)
+    }
+    useEffect(() => {
         fetchData()
     }, [queryValue])
 
@@ -26,7 +29,7 @@ export default function Query() {
 
     // to handle the sort filter
     const handleSort = (sortBy) => {
-
+        fetchData(sortBy)
     }
 
     return (
@@ -41,20 +44,20 @@ export default function Query() {
                     </ul>
                 </div>
                 <div className="query_container">
-                    <div className="query_result_title">{queryResult.length} results found</div>
+                    <div className="query_result_title">{queryResult.length} result(s) found</div>
                     <div className="query_content">
                         {
                             queryResult.map((item) => {
                                 return <Link to={{ pathname: `/singleItem/${item._id}` }} style={{ textDecoration: "none", color: "black" }} key={item._id}>
                                     <div className="query_item">
                                         <div className="query_image_container">
-                                            <img src={item.image} alt="" />
+                                            <img src={item.image} alt="query item image" />
                                         </div>
                                         <div>
                                             <h2>{item.title}</h2>
                                         </div>
                                         <div>
-                                            <h4>{item.price}</h4>
+                                            <h4>₹{item.price}</h4>
 
                                         </div>
                                     </div>

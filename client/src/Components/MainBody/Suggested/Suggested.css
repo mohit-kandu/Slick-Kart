@@ -3,19 +3,14 @@
     width: 90vw;
     margin:1em auto;
     background-color: white;
-    /* height: 500px; */
-    /* height: fit-content; */
-    /* font-size: .8rem; */
+height: max-content;
 }
-h4#suggested_name{
-    /* font-size: .85rem; */
-}
+
 
 .suggested_title{
     display: flex;
     border-bottom:1px rgba(185, 179, 179,.5) solid;
     padding:1em;
-    /* border-right: 2px solid red; */
     z-index: 20; 
 }
 .suggested_title h2{
@@ -28,18 +23,16 @@ h4#suggested_name{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .suggested_title div span{
     background-color: #2874f0;
-    /* margin-top: 1em; */
     color:white;
     width: fit-content;
-    /* height: 50%; */
     padding:.75em 1em;
     text-align: center;
     cursor: pointer;
     font-size: .9rem;
-    /* transition: 500ms; */
 
 }
 @media screen and (max-width:800px) {
@@ -56,8 +49,9 @@ h4#suggested_name{
     font-size: .8rem;
 }
 .suggested_item img{
-width: 100px;
+    width: 100px;
 }
+
 .suggested_container{
     flex-direction: column;
 }
@@ -65,20 +59,6 @@ width: 100px;
   display: none;
 }
 .suggested_container .prev, .suggested_container .next{
-    /* position: absolute;
-    z-index: 9;
-    width: 1em;
-    height: 1em;
-    border:1em solid white;
-    border-radius: 10% 0% 0% 10%;
-    bottom:5em;
-    padding:2em 0;
-    left: 0;
-    top:40%;
-    cursor: pointer;
-    outline: 1px solid rgba(54, 52, 52, 0.2);
-    background-color: white;
-    transform: scale(-1,-1); */
     border:2em solid white;
         border-left:.75em solid white;
         border-right:.75em solid white;
@@ -86,7 +66,6 @@ width: 100px;
 }
 
 @media screen and (max-width:480px) {
-
     .suggested_container .prev, .suggested_container .next{
         height: .75em;
         border:.15em solid white;
@@ -97,12 +76,9 @@ width: 100px;
 
 }
 
-
-
-
-.suggested_title div:hover{
-    background-color: rgba(40, 119, 245, 0.863);
-    transition: 500ms;
+.suggested_title span:hover{
+    background-color: rgb(41, 129, 255);
+    transition: 100ms;
 
 }
 .suggested_items{
@@ -115,11 +91,12 @@ width: 100px;
 
 }
 .suggested_item img{
-    max-width: 160px;
+    width: 10em;
     aspect-ratio: 1/1;
 }
 .suggested_item{
     max-width: 175px;
+    
     text-align: center;
     padding:1em 1.5em;
     height: fit-content;
@@ -129,16 +106,17 @@ width: 100px;
 
 }
 #suggested_name{
-    height: 70px;
+    height: 8em;
     font-size: 1rem;
-
 }
-
 .suggested_subcontainer{
     position: relative;
     border-right: 1px rgba(185, 179, 179,.5) solid;
-
+    
 }
+.suggested_item:hover{
+    color:var(--color-primary);
+} 
 /* Prev button */
 .prev{
     position: absolute;

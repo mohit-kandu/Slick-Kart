@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import "./Login.css"
 import Modal from "react-modal"
@@ -20,7 +19,7 @@ const customStyles = {
     },
 };
 
-// Bind modal to appElement (https://reactcommunity.org/react-modal/accessibility/)
+// Bind modal to appElement 
 Modal.setAppElement(document.getElementById('root'));
 
 export default function Login() {

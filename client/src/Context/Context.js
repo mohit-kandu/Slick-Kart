@@ -2,23 +2,19 @@ import React, { useContext, useState, useReducer, useEffect } from 'react'
 import axios from "axios"
 import cartReducer from "../Reducer/cartReducer"
 
-
 // CART SETUP
 const initialState = {
     loading: false,
     cart: [],
     total: 0,
-    amount: 0
+    amount: 0,
+    itemIDs: []
 }
-
-
-
 
 const GlobalContext = React.createContext()
 
 export default function AppProvider({ children }) {
     const [enterPressed, setEnterPressed] = useState(false)
-
     const [state, dispatch] = useReducer(cartReducer, initialState)
     const [url, setUrl] = useState('/api/v1')
     const [productsClothing, setProductsClothing] = useState([])

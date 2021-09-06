@@ -35,7 +35,7 @@ export default function Suggested() {
                             <div className="suggested_item" >
                                 <img src={product.image} alt="product_thumbnail" />
                                 <h4 id="suggested_name">{product.title}</h4>
-                                <span>${product.price}</span>
+                                <span id="suggested_price">₹{product.price}</span>
                             </div>
                         </Link>
                     )

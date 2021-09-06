@@ -29,22 +29,18 @@ margin-left: 1rem;
       top:3rem;
       right:0;
       z-index: -2;
-      /* transform: translateX(100%); */
       height: fit-content;
-      /* border:1px solid rgba(161, 162, 163, 0.534); */
-      display: hidden;
       opacity: 0;
+      pointer-events: none;
   }
 
   .sidebar_close{
-      /* transform: translateX(100%); */
       transition: 500ms;
       opacity: 0;
       pointer-events: none;
   }
 
   .sidebar_open{
-      /* transform: translateX(0%); */
       transition: 500ms;
       opacity: 1;
       pointer-events: all;

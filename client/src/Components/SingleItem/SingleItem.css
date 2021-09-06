@@ -12,13 +12,15 @@
     max-width: 30rem;
     border:1px solid rgba(212, 207, 207, 0.4);
     padding:.5rem;
+    max-height: 20rem;
 }
 .left_side{
     flex:2;
 }
 .left_side:first-child{
-    text-align: center;
+    text-align: center;    
 }
+
 .left_side_buttons{
 max-width: 30rem;
 display: flex;
@@ -28,6 +30,7 @@ margin:1rem auto;
 }
 .left_side img{
     max-height: 30rem;
+    margin:2.5em;
 }
 
 .left_side_buttons a{

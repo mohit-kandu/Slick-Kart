@@ -19,7 +19,7 @@ export default function Content({ title, products, contentID }) {
             <div className="content_suggested_subcontainer">
                 <div className="content_suggested_title">
                     <h2>{title}</h2>
-                    <Link to="/viewall" style={{ textDecoration: "none" }}><div>VIEW ALL</div></Link>
+                    <Link to="/viewall" style={{ textDecoration: "none" }}><div><span>VIEW ALL</span></div></Link>
                 </div>
                 <div id={contentID} className="content_suggested_items">
                     {products.map(product => {

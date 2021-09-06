@@ -25,6 +25,13 @@ const CustomerSchema = new mongoose.Schema({
     address2: {
         type: String,
         required: [true, 'e-mail is required']
+    },
+    dateCreated: {
+        type: Date,
+        default: new Date()
+    },
+    itemIDs: {
+        type: Array
     }
 
 

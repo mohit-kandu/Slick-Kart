@@ -1,0 +1,24 @@
+.order_history_container{
+    width: 50vw;
+    margin:1em auto;
+    background-color: white;
+    padding:1em;
+
+}
+
+.order_history_title{
+    display: flex;
+    justify-content: space-around;
+}
+.order_history{
+    margin:1em;
+    border:1px solid var(--color-primary);;
+}
+.order_history_item{
+    display: flex;
+    margin:1rem auto;
+    justify-content: space-around;
+}
+.order_history_item div:first-child:hover{
+color:var(--color-primary);
+}

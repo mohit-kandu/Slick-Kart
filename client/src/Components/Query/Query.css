@@ -1,5 +1,5 @@
 .query_result_title{
-margin:.25rem auto;
+margin:.25em auto 2em auto;
 text-align: center;
 font-weight: 500;
 }
@@ -18,13 +18,16 @@ font-weight: 500;
     margin:0;
     padding:0;
     list-style: none;
+    font-size: .9rem;
 }
 .query_filters li{
     margin:.25rem 0;
 }
 .query_filters li:not(:first-child){
     cursor: pointer;
-
+}
+.query_filters li:not(:first-child):hover{
+    color:var(--color-primary)
 }
 .filters_title{
     font-weight: 500;
@@ -35,12 +38,12 @@ font-weight: 500;
     flex:5;
     background-color: white;
     margin:1 auto;
-    /* width: 90vw; */
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     padding:1rem;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 .query_content{
     display: flex;
@@ -52,12 +55,17 @@ font-weight: 500;
     width: 20rem;
     margin:1rem;
 }
+.query_item:hover{
+    color:var(--color-primary);
+}
 .query_item h2, .query_item h4{
     font-weight: 400;
+    font-size: 1rem;
 }
 .query_image_container{
-    width: 10rem;
+    width: 10em;
 }
 .query_image_container img{
+    height: 10em;
     max-width: 100%;
 }
