@@ -8,7 +8,6 @@ import Loading from '../../Loading/Loading'
 export default function OrderHistory() {
     const [orderHistory, setOrderHistory] = useState([])
     const { url, isLoading, setIsLoading } = useGlobalContext()
-    const [listEmpty, setListEmpty] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,8 +15,6 @@ export default function OrderHistory() {
                 setIsLoading(true)
                 await axios.get(`${url}/order/history`).then(resp => setOrderHistory(resp.data))
                 setIsLoading(false)
-                // orderHistory.length === 0 ? setListEmpty(true) : setListEmpty(false)
-
             } catch (error) {
                 console.log(error)
                 setIsLoading(false)
@@ -26,10 +23,7 @@ export default function OrderHistory() {
         fetchData()
     }, [url])
 
-
     if (isLoading) return <Loading />
-
-    if (listEmpty) return <div className="order_history_container"><h2>No customers yet. Order now to become the very first!</h2></div>
     return (
         <div className="order_history_container">
             <div className="order_history_title">
@@ -44,7 +38,6 @@ export default function OrderHistory() {
                     </div>
                 })}
             </div>
-
         </div>
     )
 }

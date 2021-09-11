@@ -1,33 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { useGlobalContext } from '../../../Context/Context'
-import axios from "axios"
-import Loading from '../../Loading/Loading'
-
-export default function OrderedProduct({ IDs }) {
-    const { url, isLoading, setIsLoading } = useGlobalContext()
-    // const [product, setProduct] = useState({})
-
-    // useEffect(() => {
-    //     const fetchUser = async () => {
-    //         try {
-    //             setIsLoading(true)
-    //             // await axios.get(`${url}/products/${id}`).then(resp => setProduct(resp.data.data))
-    //             await axios.get(`${url}/products/${id}`).then(resp => console.log(resp.data.data))
-    //             setIsLoading(false)
-    //         } catch (error) {
-    //             console.log(error)
-    //             setIsLoading(false)
-    //         }
-    //     }
-    //     fetchUser()
-    //     setIsLoading(false)
-    // }, [url, id])
-
-    // if (isLoading) return <Loading />
-    IDs.map(item => console.log('===>', item, '<====z'))
+import React from "react"
+import './OrderedProducts.css'
+export default function OrderedProduct({ title, image, price, category }) {
     return (
         <div>
-            OrderedProduct
+            <div className="ordered_products">
+                <img src={image} alt={title} />
+                <div>
+                    <h1>{title}</h1>
+                    <h1 style={{ color: 'grey', textTransform: 'capitalize' }}>{category}</h1>
+                </div>
+                <h3>₹{price}</h3>
+            </div>
         </div>
     )
 }

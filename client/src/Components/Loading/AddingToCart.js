@@ -15,7 +15,7 @@ export default function AddingToCart() {
                 setTimeout, { passive: true }
             )
         )
-    }, [time])
+    }, [time, setTime])
 
 
     if (addingToCart) {

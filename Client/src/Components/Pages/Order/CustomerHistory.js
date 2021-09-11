@@ -9,66 +9,50 @@ import "./Customer_history.css"
 
 export default function CustomerHistory() {
     const [userData, setUserData] = useState([])
-    const [userProducts, setUserProducts] = useState([])
-    const { url, isLoading, setIsLoading } = useGlobalContext()
+    const [loading, setLoading] = useState(true)
+    const { url } = useGlobalContext()
     const { customerID } = useParams()
-    let IDArray
 
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                setIsLoading(true)
                 await axios.get(`${url}/order/customer/${customerID}`).then(resp => setUserData(resp.data))
             } catch (error) {
                 console.log(error)
-                setIsLoading(false)
+            }
+            finally {
+                setLoading(false)
             }
         }
         fetchUser()
-        setIsLoading(false)
     }, [url])
 
-
-    const fetchUserProducts = async (id) => {
-        setIsLoading(true)
-        await axios.get(`${url}/products/${id}`)
-            .then(resp => setUserProducts(resp.data.data))
-        setIsLoading(false)
-    }
-
-
-    if (isLoading) return <Loading />
+    if (loading) return <Loading />
+    const { firstName, lastName, email, address1, address2, contact } = userData.customerDetails
     return (
         <div className="customer_history_container">
-            <div className="">
-                {userData.map(item => {
-                    let IDs = JSON.stringify(item.itemIDs).split(/[,"]/)
-                    IDs.shift()
-                    IDs.pop()
-                    return <div key={item.firstName}>
-                        <h1>Ordered by:{item.firstName} {item.lastName} </h1>
-                        <h2>Order was delivered to:{item.address1} {item.address2}</h2>
-                        <h2>Ordered on:{item.dateCreated}</h2>
-                        <div>Ordered Items:</div>
-                        <OrderedProduct IDs={IDs} />
+            <h1 className="customer_history_title">This order was placed by:</h1>
+            <div className="customer_history">
+                <span>{firstName} </span>
+                <span>{lastName}</span>
+            </div>
+            <div className="customer_history">
+                <span>{contact} </span>
+                <span>{email}</span>
+            </div>
+            <div className="customer_history">
+                <span>{address1} {address2}</span>
 
-                        {/* {item.itemIDs.map(IDString => {
-                            const purchasedItemIDs = IDString.split(',')
-                            return <OrderedProduct key={IDString} />
-                        })} */}
-                    </div>
-                })}
+            </div>
+            <div className="ordered_products_container">
+                <h1 className="ordered_products_title">You ordered the following products:</h1>
+                {
+                    userData.customerProducts.map(product => {
+                        const { title, image, price, category, _id } = product
+                        return <OrderedProduct key={_id} title={title} image={image} price={price} category={category} />
+                    })
+                }
             </div>
         </div>
     )
 }
-
-
-// <div key={IDString}>
-//                                 {purchasedItemIDs.map(async (temp) => {
-//                                     let resp = await fetchUserProducts(temp)
-//                                     return <div key={temp}>
-//                                         <OrderedProduct product={resp} />
-//                                     </div>
-//                                 })}
-//                             </div>

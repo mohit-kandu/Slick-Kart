@@ -31,7 +31,7 @@ const CustomerSchema = new mongoose.Schema({
         default: new Date()
     },
     itemIDs: {
-        type: Array
+        type: String
     }
 
 

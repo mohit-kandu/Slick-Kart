@@ -7,7 +7,7 @@ import axios from "axios"
 import './SingleItem.css'
 
 export default function SingleItem() {
-    const { url, isLoading, setIsLoading, addItem, setAddingToCart, setTime, productsClothing, productsFootwear } = useGlobalContext()
+    const { url, isLoading, setIsLoading, addItem, setAddingToCart, setTime } = useGlobalContext()
     const [singleProduct, setSingleProduct] = React.useState([])
     const { itemID } = useParams()
     window.scrollTo(0, 0);

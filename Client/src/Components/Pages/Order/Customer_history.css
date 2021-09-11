@@ -3,4 +3,31 @@
     width: 70vw;
     background-color: white;
     padding:1em;
+
+}
+.customer_history{
+    margin:1em 0;
+}
+.ordered_products_container h1, .customer_history_container h1{
+    font-weight: 400;
+}
+
+
+@media screen and (min-width:401px) and (max-width:991px){
+    .customer_history_title, .ordered_products_title{
+        font-size: 1.5rem;
+    }
+    
+    
+}
+
+
+@media screen and (max-width:400px) {
+    .customer_history_container h1{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .customer_history span{
+        font-size: .9rem;
+    }
 }

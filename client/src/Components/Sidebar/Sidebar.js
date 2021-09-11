@@ -17,7 +17,7 @@ export default function Sidebar({ toggleSidebar }) {
                 </li>
                 <li><span><MdApps className="nav_menu_icons" /></span>More on Flipkart</li>
                 <li><span><MdLanguage className="nav_menu_icons" /></span>Choose Language</li>
-                <li><span><FiClipboard className="nav_menu_icons" /></span>My Orders</li>
+                <li> <Link style={{ textDecoration: "none", color: 'rgb(85, 81, 81)' }} to="/order_history"><span><FiClipboard className="nav_menu_icons" /></span>My Orders</Link></li>
                 <li>  <Link to="/cart" style={{ textDecoration: 'none' }}>
                     <div className="shopping-cart">
                         <svg width="18" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

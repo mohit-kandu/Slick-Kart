@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import "./Suggested.css"
 import { useGlobalContext } from "../../../Context/Context"
 import Loading from "../../Loading/Loading"
 import { Link } from "react-router-dom"
-import axios from "axios"
 
 
 
 export default function Suggested() {
-    const { isLoading, handleChange, setIsLoading, productsClothing } = useGlobalContext()
-
-    // const fetchproducts = async () => {
-    //     setIsLoading(true)
-    //     await axios.get("/api/v1/products").then(res => setProducts(res.data.data))
-    //     setIsLoading(false)
-    // } 
-
-    // useEffect(() => {
-    //     fetchproducts()
-    // }, [])
-
+    const { isLoading, handleChange, productsClothing } = useGlobalContext()
     if (isLoading)
         return <Loading />
     else

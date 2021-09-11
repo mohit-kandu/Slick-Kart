@@ -3,16 +3,19 @@
     margin:1em auto;
     background-color: white;
     padding:1em;
-
+    min-width: 30em;
 }
 
-.order_history_title{
+.order_history_title h3{
+    font-weight: 500;
+}
+    .order_history_title{
     display: flex;
     justify-content: space-around;
 }
 .order_history{
     margin:1em;
-    border:1px solid var(--color-primary);;
+    border:1px solid lightgrey;
 }
 .order_history_item{
     display: flex;
@@ -21,4 +24,16 @@
 }
 .order_history_item div:first-child:hover{
 color:var(--color-primary);
+}
+
+@media screen and (max-width:991px){
+    .order_history_container{
+        font-size: .9rem;
+    }
+    @media screen and (max-width:480px){
+        .order_history_item *{
+            
+        }
+    }
+
 }
