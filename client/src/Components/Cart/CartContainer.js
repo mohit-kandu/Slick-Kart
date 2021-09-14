@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 import './Cart.css'
 
 const CartContainer = () => {
-    const { cart, total, amount, modalIsOpen, setModalIsOpen } = useGlobalContext()
+    const { cart, total, amount, setModalIsOpen } = useGlobalContext()
+
 
     const handleClick = () => {
         setModalIsOpen(true)

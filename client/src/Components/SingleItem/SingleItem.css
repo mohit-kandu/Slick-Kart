@@ -27,6 +27,7 @@ display: flex;
 text-align: center;
 padding:1rem 0;
 margin:1rem auto;
+cursor: pointer;
 }
 .left_side img{
     max-height: 30rem;

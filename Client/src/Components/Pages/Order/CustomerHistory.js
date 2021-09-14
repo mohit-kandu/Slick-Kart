@@ -25,7 +25,7 @@ export default function CustomerHistory() {
             }
         }
         fetchUser()
-    }, [url])
+    }, [url, customerID])
 
     if (loading) return <Loading />
     const { firstName, lastName, email, address1, address2, contact } = userData.customerDetails

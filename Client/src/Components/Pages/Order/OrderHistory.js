@@ -21,7 +21,7 @@ export default function OrderHistory() {
             }
         }
         fetchData()
-    }, [url])
+    }, [url, setIsLoading])
 
     if (isLoading) return <Loading />
     return (

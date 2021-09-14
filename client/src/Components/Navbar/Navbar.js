@@ -31,7 +31,7 @@ export default function Navbar() {
         handleKeyPress()
         if (enterPressed)
             history.push(`/search/title=${search}`)
-    }, [enterPressed])
+    }, [history, search, setEnterPressed, enterPressed])
 
 
 

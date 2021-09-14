@@ -9,11 +9,16 @@ const createCustomer = asyncWrapper(async (req, res) => {
     //validation for first and last name
     // const nameValidator = /^[a-zA-Z]+$/
     // const contactValidator = /^[0-9]/
+    //const emailValidator = /\S+@\S+\.\S+/
     // req.body.contact = Number(req.body.contact)
 
-    await CustomerInfo.create(req.body)
-    // console.log(req.body)
-    return res.status(201).redirect('/order')
+    let tempIDs = req.body.itemIDs
+    tempIDs = tempIDs.join()
+    const result = await { ...req.body.data, itemIDs: tempIDs }
+    await CustomerInfo.create(result)
+
+    // console.log({ result })
+    return res.status(201).json({ msg: "Success" })
 
 }
 )
@@ -51,6 +56,8 @@ const getCustomer = asyncWrapper(async (req, res) => {
     const { custID } = req.params
     let customerProducts = []
     let result = {}
+
+    // console.log(custID)
 
     //pull customer's details
     const customerDetails = await CustomerInfo.findOne({ _id: custID })

@@ -51,7 +51,7 @@ export default function Query() {
                                 return <Link to={{ pathname: `/singleItem/${item._id}` }} style={{ textDecoration: "none", color: "black" }} key={item._id}>
                                     <div className="query_item">
                                         <div className="query_image_container">
-                                            <img src={item.image} alt="query item image" />
+                                            <img src={item.image} alt="product_img" />
                                         </div>
                                         <div>
                                             <h2>{item.title}</h2>

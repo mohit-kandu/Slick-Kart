@@ -31,14 +31,14 @@ export default function AppProvider({ children }) {
     const [addingToCart, setAddingToCart] = useState(false)
     const [time, setTime] = useState(false)
 
-    React.useEffect(() => {
+    useEffect(() => {
         try {
             const fetchProductsClothing = async () => {
                 setIsLoading(true)
                 await axios.get(`${url}/products`)
                     .then(resp => setProductsClothing(resp.data.data))
-                const res = fetch(`${url}/products`)
-                    .then(res => res.json()).then(data => setProductsClothing(data.data))
+                // const res = fetch(`${url}/products`)
+                //     .then(res => res.json()).then(data => setProductsClothing(data.data))
                 setIsLoading(false)
             }
             const fetchproductsFootwear = async () => {
@@ -56,7 +56,7 @@ export default function AppProvider({ children }) {
             console.log(error)
             setIsLoading(false)
         }
-    }, [])
+    }, [url])
 
     // CONTROL LEFT OR RIGHT BUTTONS FOR CONTENT
     const handleChange = (e, itemToDisplace) => {
